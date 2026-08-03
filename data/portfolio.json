@@ -1,0 +1,319 @@
+{
+  "personal": {
+    "name": "Louis Amoah-Nuamah",
+    "title": "Full-Stack Web Developer / Software Developer",
+    "currentRole": "Software Engineer",
+    "bio": "I'm a passionate developer who loves creating elegant solutions to complex problems. With a background in software engineering, I enjoy working on projects that challenge me and allow me to learn new technologies.",
+    "philosophy": "I believe in creating digital experiences that are both beautiful and functional. My goal is to build products that not only meet user needs but exceed their expectations.",
+    "welcomeMessage": "Welcome to my portfolio! I'm passionate about creating elegant solutions with modern technologies. Here you can learn more about my skills, projects and experience.",
+    "availability": "Available for hire",
+    "location": "Remote / On-site",
+    "profileImage": "https://res.cloudinary.com/drsxgcyly/image/upload/f_auto,q_auto/v1647447233/fortfolio_website/web_pic121_liqk03.png"
+  },
+  "contact": {
+    "email": "louis.amoah@outlook.com",
+    "phone": "",
+    "github": "https://github.com/louisan42",
+    "linkedin": "https://www.linkedin.com/in/louis-amoah-nuamah-ba1768129/",
+    "twitter": "",
+    "website": "https://louis-amoah.vercel.app/"
+  },
+  "skills": {
+    "categories": [
+      {
+        "name": "Frontend",
+        "icon": "🎨",
+        "items": [
+          { "name": "React", "level": 90, "years": 4 },
+          { "name": "Next.js", "level": 85, "years": 3 },
+          { "name": "TypeScript", "level": 88, "years": 3 },
+          { "name": "Tailwind CSS", "level": 92, "years": 4 },
+          { "name": "Vue.js", "level": 75, "years": 2 },
+          { "name": "HTML5/CSS3", "level": 95, "years": 6 }
+        ]
+      },
+      {
+        "name": "Backend",
+        "icon": "⚙️",
+        "items": [
+          { "name": "Node.js", "level": 85, "years": 4 },
+          { "name": "Express", "level": 80, "years": 3 },
+          { "name": "Python", "level": 82, "years": 3 },
+          { "name": "Django", "level": 75, "years": 2 },
+          { "name": "FastAPI", "level": 70, "years": 1 },
+          { "name": "GraphQL", "level": 65, "years": 2 }
+        ]
+      },
+      {
+        "name": "Database",
+        "icon": "🗄️",
+        "items": [
+          { "name": "MongoDB", "level": 80, "years": 3 },
+          { "name": "PostgreSQL", "level": 85, "years": 4 },
+          { "name": "MySQL", "level": 78, "years": 3 },
+          { "name": "Redis", "level": 70, "years": 2 },
+          { "name": "Supabase", "level": 75, "years": 1 }
+        ]
+      },
+      {
+        "name": "DevOps & Tools",
+        "icon": "🚀",
+        "items": [
+          { "name": "Docker", "level": 75, "years": 2 },
+          { "name": "AWS", "level": 70, "years": 2 },
+          { "name": "Git", "level": 90, "years": 5 },
+          { "name": "CI/CD", "level": 72, "years": 2 },
+          { "name": "Vercel", "level": 85, "years": 3 },
+          { "name": "Netlify", "level": 80, "years": 3 }
+        ]
+      }
+    ]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "Senior Full-Stack Developer",
+      "company": "TechFlow Solutions",
+      "location": "Remote",
+      "type": "Full-time",
+      "period": "2022 - Present",
+      "duration": "2+ years",
+      "description": "Led development of web applications using React and Node.js. Improved performance by 40% and implemented CI/CD pipelines. Mentored junior developers and collaborated with cross-functional teams.",
+      "achievements": [
+        "Increased application performance by 40% through optimization",
+        "Implemented automated CI/CD pipelines reducing deployment time by 60%",
+        "Led a team of 4 developers on multiple projects",
+        "Introduced modern development practices and code review processes"
+      ],
+      "technologies": ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker"]
+    },
+    {
+      "id": 2,
+      "title": "Web Developer",
+      "company": "Digital Innovations Inc",
+      "location": "New York, NY",
+      "type": "Full-time",
+      "period": "2020 - 2022",
+      "duration": "2 years",
+      "description": "Built responsive web applications and collaborated with design teams to implement UI/UX improvements. Worked on e-commerce platforms and content management systems.",
+      "achievements": [
+        "Developed 15+ responsive web applications",
+        "Collaborated with design team to improve user experience",
+        "Reduced page load times by 35% through optimization",
+        "Implemented accessibility standards across all projects"
+      ],
+      "technologies": ["JavaScript", "React", "Python", "Django", "MongoDB", "CSS3"]
+    },
+    {
+      "id": 3,
+      "title": "Junior Developer",
+      "company": "StartupTech",
+      "location": "San Francisco, CA",
+      "type": "Full-time",
+      "period": "2019 - 2020",
+      "duration": "1 year",
+      "description": "Contributed to various web development projects, learned modern development practices, and gained experience with agile methodologies.",
+      "achievements": [
+        "Successfully completed 20+ feature implementations",
+        "Learned and applied agile development methodologies",
+        "Contributed to open-source projects",
+        "Received 'Rising Star' award for exceptional performance"
+      ],
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Vue.js", "MySQL", "Git"]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "University of Technology",
+      "degree": "Master of Science in Computer Science",
+      "field": "Software Engineering",
+      "period": "2017 - 2019",
+      "gpa": "3.8/4.0",
+      "location": "Boston, MA",
+      "description": "Specialized in software architecture, algorithms, and distributed systems. Completed thesis on 'Optimizing Web Application Performance through Advanced Caching Strategies'.",
+      "coursework": [
+        "Advanced Algorithms",
+        "Software Architecture",
+        "Distributed Systems",
+        "Machine Learning",
+        "Database Systems"
+      ]
+    },
+    {
+      "id": 2,
+      "institution": "State University",
+      "degree": "Bachelor of Science in Software Engineering",
+      "field": "Computer Science",
+      "period": "2013 - 2017",
+      "gpa": "3.6/4.0",
+      "location": "Austin, TX",
+      "description": "Comprehensive program covering software development, computer science fundamentals, and project management. Active in programming clubs and hackathons.",
+      "coursework": [
+        "Data Structures",
+        "Object-Oriented Programming",
+        "Web Development",
+        "Software Engineering",
+        "Computer Networks"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "EcoTracker - Sustainability Dashboard",
+      "description": "A comprehensive web application that helps users track their environmental impact through daily activities. Features real-time analytics, goal setting, and community challenges.",
+      "longDescription": "EcoTracker is a full-stack web application designed to promote environmental consciousness by allowing users to monitor and reduce their carbon footprint. The platform includes features like activity logging, impact visualization, goal setting, and social challenges to encourage sustainable living.",
+      "image": "/projects/ecotracker.jpg",
+      "images": ["/projects/ecotracker-1.jpg", "/projects/ecotracker-2.jpg", "/projects/ecotracker-3.jpg"],
+      "tags": ["React", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
+      "category": "Web Application",
+      "status": "Completed",
+      "featured": true,
+      "link": "https://ecotracker-demo.vercel.app",
+      "github": "https://github.com/louisamoah/ecotracker",
+      "demoCredentials": {
+        "username": "demo@ecotracker.com",
+        "password": "demo123"
+      },
+      "features": [
+        "Real-time carbon footprint tracking",
+        "Interactive data visualizations",
+        "Community challenges and leaderboards",
+        "Goal setting and progress tracking",
+        "Mobile-responsive design"
+      ],
+      "challenges": [
+        "Implementing real-time data synchronization",
+        "Creating engaging data visualizations",
+        "Optimizing performance for large datasets"
+      ],
+      "duration": "3 months",
+      "teamSize": 1
+    },
+    {
+      "id": 2,
+      "title": "TaskMaster Pro - Project Management",
+      "description": "An advanced project management platform with team collaboration features, time tracking, and automated reporting capabilities.",
+      "longDescription": "TaskMaster Pro is a comprehensive project management solution built for modern teams. It combines intuitive task management with powerful collaboration tools, real-time updates, and detailed analytics to help teams stay productive and organized.",
+      "image": "/projects/taskmaster.jpg",
+      "images": ["/projects/taskmaster-1.jpg", "/projects/taskmaster-2.jpg", "/projects/taskmaster-3.jpg"],
+      "tags": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Socket.io"],
+      "category": "SaaS Platform",
+      "status": "In Development",
+      "featured": true,
+      "link": "https://taskmaster-pro.netlify.app",
+      "github": "https://github.com/louisamoah/taskmaster-pro",
+      "features": [
+        "Kanban-style task management",
+        "Real-time team collaboration",
+        "Time tracking and reporting",
+        "File sharing and comments",
+        "Advanced project analytics"
+      ],
+      "challenges": [
+        "Building real-time collaboration features",
+        "Implementing complex permission systems",
+        "Creating intuitive user interfaces"
+      ],
+      "duration": "4 months",
+      "teamSize": 2
+    },
+    {
+      "id": 3,
+      "title": "FoodieFind - Restaurant Discovery",
+      "description": "A mobile-first web application that helps users discover nearby restaurants with personalized recommendations based on preferences and dietary restrictions.",
+      "longDescription": "FoodieFind leverages location-based services and machine learning to provide personalized restaurant recommendations. Users can filter by cuisine, dietary restrictions, price range, and ratings to find the perfect dining experience.",
+      "image": "/projects/foodiefind.jpg",
+      "images": ["/projects/foodiefind-1.jpg", "/projects/foodiefind-2.jpg", "/projects/foodiefind-3.jpg"],
+      "tags": ["React Native", "Firebase", "Google Maps API", "Express", "ML"],
+      "category": "Mobile Application",
+      "status": "Completed",
+      "featured": false,
+      "link": "https://foodiefind-app.herokuapp.com",
+      "github": "https://github.com/louisamoah/foodiefind",
+      "features": [
+        "Location-based restaurant discovery",
+        "Personalized recommendations",
+        "Advanced filtering options",
+        "User reviews and ratings",
+        "Social sharing capabilities"
+      ],
+      "challenges": [
+        "Integrating multiple APIs efficiently",
+        "Implementing recommendation algorithms",
+        "Ensuring cross-platform compatibility"
+      ],
+      "duration": "2 months",
+      "teamSize": 1
+    },
+    {
+      "id": 4,
+      "title": "CryptoPortfolio - Investment Tracker",
+      "description": "A real-time cryptocurrency portfolio tracker with advanced analytics, price alerts, and market insights.",
+      "longDescription": "CryptoPortfolio provides comprehensive cryptocurrency investment tracking with real-time price updates, portfolio analytics, and market insights. Users can track their investments, set price alerts, and analyze market trends.",
+      "image": "/projects/cryptoportfolio.jpg",
+      "images": ["/projects/crypto-1.jpg", "/projects/crypto-2.jpg", "/projects/crypto-3.jpg"],
+      "tags": ["Vue.js", "Python", "FastAPI", "Redis", "WebSocket"],
+      "category": "Financial App",
+      "status": "Completed",
+      "featured": false,
+      "link": "https://cryptoportfolio-tracker.vercel.app",
+      "github": "https://github.com/louisamoah/crypto-portfolio",
+      "features": [
+        "Real-time price tracking",
+        "Portfolio performance analytics",
+        "Price alerts and notifications",
+        "Market trend analysis",
+        "Secure data encryption"
+      ],
+      "challenges": [
+        "Handling real-time data streams",
+        "Implementing secure authentication",
+        "Creating responsive data visualizations"
+      ],
+      "duration": "2.5 months",
+      "teamSize": 1
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "credentialId": "AWS-SA-2023-001",
+      "validUntil": "2026"
+    },
+    {
+      "name": "Google Cloud Professional Developer",
+      "issuer": "Google Cloud",
+      "date": "2022",
+      "credentialId": "GCP-PD-2022-001",
+      "validUntil": "2025"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "role": "Product Manager",
+      "company": "TechFlow Solutions",
+      "content": "Louis is an exceptional developer who consistently delivers high-quality solutions. His attention to detail and ability to solve complex problems makes him invaluable to any team.",
+      "image": "/testimonials/sarah.jpg"
+    },
+    {
+      "name": "Michael Chen",
+      "role": "Senior Developer",
+      "company": "Digital Innovations Inc",
+      "content": "Working with Louis was a pleasure. He brings fresh ideas and modern approaches to development while maintaining excellent code quality and documentation.",
+      "image": "/testimonials/michael.jpg"
+    }
+  ],
+  "stats": {
+    "yearsOfExperience": 5,
+    "projectsCompleted": 50,
+    "clientsSatisfied": 25,
+    "linesOfCode": 100000,
+    "githubContributions": 1200,
+    "technologiesMastered": 20
+  }
+}
