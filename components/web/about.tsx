@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { Chip } from "@heroui/chip";
-import { Card, CardBody } from "@heroui/card";
 
 import portfolioData from "@/data/portfolio.json";
 
@@ -10,35 +8,34 @@ export const AboutSection = () => {
   const { personal, skills, experience, education } = portfolioData;
 
   return (
-    <section
-      className="py-24 px-4 max-w-7xl mx-auto bg-content1/20 rounded-3xl my-10"
-      id="about"
-    >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-        {/* Personal Bio */}
-        <div className="space-y-6">
-          <h2 className="text-3xl md:text-5xl font-bold">About Me</h2>
-          <p className="text-large text-default-500 leading-loose">
+    <section className="section-rule px-6 py-24 md:px-12" id="about">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2">
+        <div>
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-muted">
+            About
+          </p>
+          <h2 className="mb-6 text-3xl font-semibold tracking-tight text-ink md:text-5xl">
+            Engineer first
+          </h2>
+          <p className="mb-8 text-base leading-relaxed text-muted md:text-lg">
             {personal.bio}
           </p>
-          <div className="p-6 border-l-4 border-primary bg-primary/5 rounded-r-xl">
-            <p className="italic text-default-600 font-medium">
-              &quot;{personal.philosophy}&quot;
-            </p>
-          </div>
+          <blockquote className="border-l-2 border-lime pl-5 text-base font-medium leading-relaxed text-ink">
+            {personal.philosophy}
+          </blockquote>
 
-          <div className="pt-8">
-            <h3 className="text-2xl font-bold mb-6">Education</h3>
-            <div className="space-y-8">
+          <div className="mt-12">
+            <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.22em] text-muted">
+              Education
+            </h3>
+            <div className="space-y-6">
               {education.map((edu) => (
-                <div
-                  key={edu.id}
-                  className="relative pl-8 border-l border-default-200"
-                >
-                  <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-primary" />
-                  <h4 className="font-bold text-lg">{edu.degree}</h4>
-                  <p className="text-default-500">
-                    {edu.institution}, {edu.period}
+                <div key={edu.id} className="border-t border-line pt-4">
+                  <h4 className="text-lg font-semibold text-ink">
+                    {edu.degree}
+                  </h4>
+                  <p className="mt-1 font-mono text-sm text-muted">
+                    {edu.institution} · {edu.period}
                   </p>
                 </div>
               ))}
@@ -46,52 +43,51 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        {/* Skills & Experience */}
-        <div className="space-y-12">
-          {/* Skills */}
+        <div className="space-y-14">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Technical Arsenal</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.22em] text-muted">
+              Stack
+            </h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {skills.categories.map((category) => (
-                <Card
-                  key={category.name}
-                  className="bg-background/60 backdrop-blur-sm border border-default-100"
-                  shadow="sm"
-                >
-                  <CardBody>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">{category.icon}</span>
-                      <h4 className="font-bold">{category.name}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {category.items.map((skill) => (
-                        <Chip key={skill.name} size="sm" variant="flat">
-                          {skill.name}
-                        </Chip>
-                      ))}
-                    </div>
-                  </CardBody>
-                </Card>
+                <div key={category.name} className="border border-line p-5">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-ink">
+                    {category.name}
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {category.items.map((skill) => (
+                      <li
+                        key={skill.name}
+                        className="font-mono text-sm text-muted"
+                      >
+                        {skill.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
           </div>
 
-          {/* Experience */}
           <div>
-            <h3 className="text-2xl font-bold mb-6">Experience</h3>
+            <h3 className="mb-6 font-mono text-xs uppercase tracking-[0.22em] text-muted">
+              Experience
+            </h3>
             <div className="space-y-6">
               {experience.map((exp) => (
-                <div key={exp.id} className="group">
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h4 className="font-bold text-lg group-hover:text-primary transition-colors">
+                <div key={exp.id} className="border-t border-line pt-4">
+                  <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+                    <h4 className="text-lg font-semibold text-ink">
                       {exp.title}
                     </h4>
-                    <span className="text-small text-default-400 font-mono">
+                    <span className="font-mono text-xs text-muted">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-default-600 mb-2">{exp.company}</p>
-                  <p className="text-sm text-default-500 line-clamp-2">
+                  <p className="mb-2 text-sm font-medium text-ink">
+                    {exp.company}
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted">
                     {exp.description}
                   </p>
                 </div>

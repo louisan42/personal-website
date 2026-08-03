@@ -23,31 +23,33 @@ export const Navbar = ({ items, logo, rightContent }: NavbarProps) => {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
-  // After mounting, we can access the pathname
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <HeroUINavbar className="h-16" maxWidth="xl">
+    <HeroUINavbar
+      className="fixed top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-md"
+      classNames={{
+        wrapper: "px-6 md:px-12 max-w-none",
+      }}
+      height="4rem"
+      maxWidth="full"
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-1" href="/">
+        <NavbarBrand as="li" className="max-w-fit gap-3">
+          <NextLink className="flex items-center" href="/">
             {logo}
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden md:flex gap-6 justify-start ml-8">
+        <ul className="ml-10 hidden justify-start gap-7 md:flex">
           {items.map((item) => {
             const isActive = mounted && pathname === item.href;
 
             return (
               <NavbarItem key={item.href}>
                 <NextLink
-                  className={clsx(
-                    "nav-link text-sm tracking-wide",
-                    isActive && "active-nav-link",
-                  )}
-                  color="foreground"
+                  className={clsx("nav-link", isActive && "active-nav-link")}
                   href={item.href}
                 >
                   {item.label}
@@ -60,11 +62,11 @@ export const Navbar = ({ items, logo, rightContent }: NavbarProps) => {
 
       <NavbarContent className="basis-1/5 sm:basis-auto" justify="end">
         {rightContent}
-        <NavbarMenuToggle className="md:hidden ml-2" />
+        <NavbarMenuToggle className="ml-2 text-ink md:hidden" />
       </NavbarContent>
 
-      <NavbarMenu className="pt-8 bg-white/95 dark:bg-dark/95 backdrop-blur-md">
-        <div className="mx-4 mt-2 flex flex-col gap-4">
+      <NavbarMenu className="bg-paper pt-8">
+        <div className="mx-4 mt-2 flex flex-col gap-2">
           {items.map((item, index) => {
             const isActive = mounted && pathname === item.href;
 
@@ -72,10 +74,8 @@ export const Navbar = ({ items, logo, rightContent }: NavbarProps) => {
               <NavbarMenuItem key={`${item.label}-${index}`}>
                 <Link
                   className={clsx(
-                    "block py-2 text-lg",
-                    isActive
-                      ? "text-primary font-medium"
-                      : "text-text-dark dark:text-text-light hover:text-primary dark:hover:text-primary",
+                    "block py-3 text-lg",
+                    isActive ? "text-ink font-medium" : "text-muted",
                   )}
                   href={item.href}
                 >

@@ -13,7 +13,8 @@ export const commands: Record<string, string> = {
   projects: "List featured projects",
   contact: "Show contact information",
   clear: "Clear terminal output",
-  gui: "Switch to GUI/Web mode",
+  gui: "Return to landing gate",
+  ui: "Open the full portfolio UI",
 };
 
 export const executeCommand = (cmd: string): CommandOutput => {
@@ -115,7 +116,11 @@ Technologies: ${job.technologies.join(", ")}
   }
 
   if (cleanCmd === "gui") {
-    return { type: "success", content: "Switching to Web View..." };
+    return { type: "success", content: "Returning to landing..." };
+  }
+
+  if (cleanCmd === "ui") {
+    return { type: "success", content: "Opening portfolio UI..." };
   }
 
   return {

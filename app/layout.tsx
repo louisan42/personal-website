@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { fontMono, fontSans } from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#F4F5F7" },
+    { media: "(prefers-color-scheme: dark)", color: "#111111" },
   ],
 };
 
@@ -36,27 +36,14 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased bg-noise-dark",
+          "min-h-screen bg-background font-sans text-foreground antialiased",
           fontSans.variable,
+          fontMono.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {/* Background decorative elements */}
-          <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-            <div className="absolute top-20 left-10 w-72 h-72 shape-blob opacity-20" />
-            <div
-              className="absolute top-1/2 right-10 w-64 h-64 shape-blob opacity-20"
-              style={{ animationDelay: "-3s" }}
-            />
-            <div
-              className="absolute bottom-20 left-1/3 w-80 h-80 shape-blob opacity-20"
-              style={{ animationDelay: "-5s" }}
-            />
-          </div>
-
-          <div className="relative flex flex-col h-screen">
-            {/* <Navbar /> */}
-            <main className="w-full mx-auto flex-grow">{children}</main>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+          <div className="relative flex min-h-screen flex-col">
+            <main className="w-full flex-grow">{children}</main>
           </div>
           <Toaster closeButton richColors position="top-right" />
         </Providers>

@@ -2,45 +2,56 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type ViewMode = "web" | "cli";
+export type ViewMode = "landing" | "ui" | "cli";
 
 interface ViewContextType {
   viewMode: ViewMode;
   setViewMode: (mode: ViewMode) => void;
-  toggleViewMode: () => void;
+  openUi: () => void;
+  openTerminal: () => void;
+  openLanding: () => void;
   isLoaded: boolean;
 }
 
 const ViewContext = createContext<ViewContextType | undefined>(undefined);
 
+const STORAGE_KEY = "portfolio-view-mode";
+
+function isViewMode(value: string | null): value is ViewMode {
+  return value === "landing" || value === "ui" || value === "cli";
+}
+
 export function ViewProvider({ children }: { children: React.ReactNode }) {
-  const [viewMode, setViewModeState] = useState<ViewMode>("web");
+  const [viewMode, setViewModeState] = useState<ViewMode>("landing");
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Load preference from local storage
-    const savedMode = localStorage.getItem("portfolio-view-mode") as ViewMode;
+    const savedMode = localStorage.getItem(STORAGE_KEY);
 
-    if (savedMode && (savedMode === "web" || savedMode === "cli")) {
+    if (isViewMode(savedMode)) {
       setViewModeState(savedMode);
+    } else if (savedMode === "web") {
+      // migrate old "web" preference to full UI portfolio
+      setViewModeState("ui");
     }
     setIsLoaded(true);
   }, []);
 
   const setViewMode = (mode: ViewMode) => {
     setViewModeState(mode);
-    localStorage.setItem("portfolio-view-mode", mode);
-  };
-
-  const toggleViewMode = () => {
-    const newMode = viewMode === "web" ? "cli" : "web";
-
-    setViewMode(newMode);
+    localStorage.setItem(STORAGE_KEY, mode);
   };
 
   return (
     <ViewContext.Provider
-      value={{ viewMode, setViewMode, toggleViewMode, isLoaded }}
+      value={{
+        viewMode,
+        setViewMode,
+        openUi: () => setViewMode("ui"),
+        openTerminal: () => setViewMode("cli"),
+        openLanding: () => setViewMode("landing"),
+        isLoaded,
+      }}
     >
       {children}
     </ViewContext.Provider>

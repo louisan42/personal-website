@@ -5,18 +5,22 @@ import React from "react";
 import { useView } from "@/components/view-context";
 import { WebLayout } from "@/components/web-layout";
 import { Terminal } from "@/components/cli/terminal";
+import { LandingGate } from "@/components/web/landing-gate";
 
 export default function Home() {
   const { viewMode, isLoaded } = useView();
 
-  // Prevent hydration mismatch or flash of wrong content
   if (!isLoaded) {
-    return <div className="min-h-screen bg-background" />;
+    return <div className="min-h-screen bg-paper" />;
   }
 
   if (viewMode === "cli") {
     return <Terminal />;
   }
 
-  return <WebLayout />;
+  if (viewMode === "ui") {
+    return <WebLayout />;
+  }
+
+  return <LandingGate />;
 }

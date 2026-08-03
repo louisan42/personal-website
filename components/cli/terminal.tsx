@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@heroui/theme";
 
+import { SignatureMark } from "@/components/brand/signature-mark";
 import { executeCommand, CommandOutput } from "@/lib/cli-commands";
 import { useView } from "@/components/view-context";
 
@@ -12,79 +13,92 @@ interface HistoryItem {
 }
 
 export const Terminal = () => {
-  const { setViewMode } = useView();
+  const { openLanding, openUi } = useView();
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<HistoryItem[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Focus input on click anywhere in terminal
   useEffect(() => {
     inputRef.current?.focus();
   }, [history]);
 
-  // Auto-scroll to bottom
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [history]);
 
   const handleCommand = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      const cmd = input.trim();
+    if (e.key !== "Enter") return;
 
-      if (cmd === "clear") {
-        setHistory([]);
-        setInput("");
+    const cmd = input.trim();
 
-        return;
-      }
-
-      if (cmd === "gui") {
-        setViewMode("web");
-
-        return;
-      }
-
-      const output = executeCommand(cmd);
-
-      setHistory((prev) => [...prev, { cmd, output }]);
+    if (cmd === "clear") {
+      setHistory([]);
       setInput("");
+
+      return;
     }
+
+    if (cmd === "gui" || cmd === "ui") {
+      if (cmd === "ui") {
+        openUi();
+      } else {
+        openLanding();
+      }
+
+      return;
+    }
+
+    const output = executeCommand(cmd);
+
+    setHistory((prev) => [...prev, { cmd, output }]);
+    setInput("");
   };
 
   return (
     <div
-      className="min-h-screen bg-terminal-bg text-terminal-text font-mono p-4 sm:p-8 overflow-y-auto selection:bg-terminal-text selection:text-terminal-bg"
+      className="min-h-screen bg-terminal-bg font-mono text-terminal-text selection:bg-lime selection:text-ink"
       role="button"
       tabIndex={0}
       onClick={() => inputRef.current?.focus()}
       onKeyDown={() => inputRef.current?.focus()}
     >
-      <div className="max-w-4xl mx-auto space-y-4">
-        {/* Header */}
-        <div className="mb-8 space-y-2 text-sm sm:text-base opacity-80">
-          <p>Portfolio Terminal [Version 2.0.0]</p>
-          <p>(c) 2024 Louis Amoah-Nuamah. All rights reserved.</p>
-          <p className="text-terminal-dim">
-            Type &apos;help&apos; to see available commands.
+      <div className="flex items-center justify-between border-b border-terminal-line px-4 py-4 sm:px-8">
+        <SignatureMark size="sm" />
+        <button
+          className="text-xs uppercase tracking-[0.2em] text-terminal-dim underline decoration-lime decoration-2 underline-offset-4 transition-colors hover:text-ink"
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            openLanding();
+          }}
+        >
+          gui →
+        </button>
+      </div>
+
+      <div className="mx-auto max-w-4xl space-y-4 px-4 py-8 sm:px-8">
+        <div className="mb-8 space-y-2 text-sm text-terminal-dim">
+          <p className="text-terminal-text">Portfolio Terminal · v2.0.0</p>
+          <p>Full-Stack / Software Engineer — Louis Amoah-Nuamah</p>
+          <p>
+            Type <span className="text-ink">help</span> for commands. Type{" "}
+            <span className="text-ink">gui</span> to leave.
           </p>
         </div>
 
-        {/* Output History */}
         <div className="space-y-4">
           {history.map((item, i) => (
-            <div key={i} className="space-y-2">
-              <div className="flex items-center gap-2">
-                <span className="text-terminal-warning">
-                  visitor@portfolio:~$
-                </span>
-                <span className="text-terminal-text">{item.cmd}</span>
+            <div key={`${item.cmd}-${i}`} className="space-y-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-lime">visitor@portfolio:~$</span>
+                <span>{item.cmd}</span>
               </div>
               <div
                 className={cn(
-                  "whitespace-pre-wrap pl-4 border-l-2 border-terminal-dim/20 leading-relaxed",
+                  "whitespace-pre-wrap border-l-2 border-terminal-line pl-4 leading-relaxed text-terminal-dim",
                   item.output.type === "error" && "text-terminal-alert",
-                  item.output.type === "success" && "text-terminal-text",
+                  item.output.type === "success" && "text-ink",
                 )}
               >
                 {item.output.content}
@@ -93,21 +107,25 @@ export const Terminal = () => {
           ))}
         </div>
 
-        {/* Input Line */}
         <div className="flex items-center gap-2 pt-2">
-          <span className="text-terminal-warning">visitor@portfolio:~$</span>
+          <span className="text-lime">visitor@portfolio:~$</span>
           <div className="relative flex-1">
             <input
               ref={inputRef}
               autoComplete="off"
-              className="w-full bg-transparent border-none outline-none text-terminal-text focus:ring-0 p-0"
+              className="w-full border-none bg-transparent p-0 text-ink outline-none focus:ring-0"
               spellCheck="false"
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleCommand}
             />
-            {/* Blinking Cursor Block if input is focused logic could go here, but default caret + styling is usually enough */}
+            {!input ? (
+              <span
+                aria-hidden
+                className="pointer-events-none absolute left-0 top-1/2 h-4 w-2 -translate-y-1/2 animate-cursor-blink bg-lime"
+              />
+            ) : null}
           </div>
         </div>
         <div ref={scrollRef} />
