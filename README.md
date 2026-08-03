@@ -1,54 +1,53 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Next.js & HeroUI Template
 
-## 🚀 Quick start
+This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
 
-1.  **Create a Gatsby site.**
+[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Technologies Used
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- [Next.js 14](https://nextjs.org/docs/getting-started)
+- [HeroUI v2](https://heroui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind Variants](https://tailwind-variants.org)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [next-themes](https://github.com/pacocoursey/next-themes)
 
-2.  **Start developing.**
+## How to Use
 
-    Navigate into your new site’s directory and start it up.
+### Use the template with create-next-app
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+To create a new project based on this template using `create-next-app`, run the following command:
 
-3.  **Open the code and start customizing!**
+```bash
+npx create-next-app -e https://github.com/heroui-inc/next-app-template
+```
 
-    Your site is now running at http://localhost:8000!
+### Install dependencies
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
 
-4.  **Learn more**
+```bash
+npm install
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Run the development server
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```bash
+npm run dev
+```
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+### Setup pnpm (optional)
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+```bash
+public-hoist-pattern[]=*@heroui/*
+```
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
 
-## 🚀 Quick start (Gatsby Cloud)
+## License
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
