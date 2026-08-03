@@ -41,7 +41,14 @@ export default function RootLayout({
           fontMono.variable,
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
+        <Providers
+          themeProps={{
+            attribute: "class",
+            defaultTheme: "system",
+            enableSystem: true,
+            storageKey: "portfolio-theme",
+          }}
+        >
           <div className="relative flex min-h-screen flex-col">
             <main className="w-full flex-grow">{children}</main>
           </div>

@@ -11,7 +11,7 @@ export const LandingGate = () => {
   const { openUi, openTerminal } = useView();
 
   return (
-    <div className="flex h-dvh max-h-dvh flex-col overflow-hidden bg-[#F5F5F5] text-ink">
+    <div className="flex h-dvh max-h-dvh flex-col overflow-hidden bg-paper text-ink">
       <GateNav />
 
       <section className="grid min-h-0 flex-1 grid-cols-1 lg:grid-cols-2">
@@ -22,14 +22,14 @@ export const LandingGate = () => {
             Full-stack. Software. Engineering.
           </h1>
 
-          <p className="mt-5 max-w-md font-mono text-sm leading-relaxed text-ink/70 md:text-[15px]">
+          <p className="mt-5 max-w-md font-mono text-sm leading-relaxed text-muted md:text-[15px]">
             I build software that is intentional, scalable, and
             production-ready.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <button
-              className="inline-flex items-center gap-2 bg-lime px-5 py-3 font-mono text-sm font-semibold text-ink transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 bg-lime px-5 py-3 font-mono text-sm font-semibold text-lime-foreground transition-opacity hover:opacity-90"
               type="button"
               onClick={openUi}
             >
@@ -38,7 +38,7 @@ export const LandingGate = () => {
             </button>
 
             <button
-              className="inline-flex items-center gap-2 border border-ink bg-transparent px-5 py-3 font-mono text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-[#F5F5F5]"
+              className="inline-flex items-center gap-2 border border-ink bg-transparent px-5 py-3 font-mono text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-paper"
               type="button"
               onClick={openTerminal}
             >
@@ -48,7 +48,7 @@ export const LandingGate = () => {
           </div>
         </div>
 
-        <div className="relative min-h-[38vh] border-t border-black/10 lg:min-h-0 lg:border-l lg:border-t-0">
+        <div className="relative min-h-[38vh] border-t border-line lg:min-h-0 lg:border-l lg:border-t-0">
           <Image
             fill
             priority

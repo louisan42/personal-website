@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 
+import ThemeSwitch from "@/components/theme-switch";
 import { useView } from "@/components/view-context";
 
 const links = [
@@ -32,7 +33,7 @@ export function GateNav({ active = "Home" }: { active?: string }) {
   };
 
   return (
-    <header className="flex h-14 shrink-0 items-center justify-between border-b border-black/10 bg-[#F5F5F5] px-6 md:px-10">
+    <header className="flex h-14 shrink-0 items-center justify-between border-b border-line bg-paper px-6 md:px-10">
       <nav className="flex items-center gap-6 md:gap-8">
         {links.map((link) => {
           const isActive = active === link.label;
@@ -56,6 +57,7 @@ export function GateNav({ active = "Home" }: { active?: string }) {
       </nav>
 
       <div className="flex items-center gap-3">
+        <ThemeSwitch />
         <span className="font-mono text-sm text-ink">cli</span>
         <button
           aria-checked={viewMode === "cli"}
@@ -71,7 +73,7 @@ export function GateNav({ active = "Home" }: { active?: string }) {
             }
           }}
         >
-          <span className="absolute top-0.5 left-[1.35rem] h-6 w-6 rounded-full bg-ink shadow-sm" />
+          <span className="absolute top-0.5 left-[1.35rem] h-6 w-6 rounded-full bg-[#111111] shadow-sm" />
         </button>
       </div>
     </header>
