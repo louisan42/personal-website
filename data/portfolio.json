@@ -172,10 +172,6 @@
       "featured": true,
       "link": "https://ecotracker-demo.vercel.app",
       "github": "https://github.com/louisamoah/ecotracker",
-      "demoCredentials": {
-        "username": "demo@ecotracker.com",
-        "password": "demo123"
-      },
       "features": [
         "Real-time carbon footprint tracking",
         "Interactive data visualizations",
