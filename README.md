@@ -1,53 +1,38 @@
-# Next.js & HeroUI Template
+# Personal Website
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
+Portfolio site for Louis Amoah-Nuamah — Next.js App Router with a dual **web** and **CLI** experience.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
+Live: [https://louis-amoah.vercel.app/](https://louis-amoah.vercel.app/)
 
-## Technologies Used
+## Stack
 
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
+- Next.js 15 (App Router)
+- HeroUI + Tailwind CSS
+- TypeScript
+- Framer Motion / next-themes
 
-## How to Use
+## Features
 
-### Use the template with create-next-app
+- Single-page web layout (landing, projects, about, contact)
+- Terminal mode with commands like `help`, `about`, `skills`, `projects`, `contact`, `gui`
+- Content driven by [`data/portfolio.json`](data/portfolio.json)
 
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
-```
-
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+## Develop
 
 ```bash
 npm install
-```
-
-### Run the development server
-
-```bash
 npm run dev
 ```
 
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+## Build
 
 ```bash
-public-hoist-pattern[]=*@heroui/*
+npm run build
+npm start
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## Deploy
 
-## License
+Connected to Vercel on the `master` branch. Preview deployments run on feature branches.
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+The previous Gatsby site is preserved on branch `archive/gatsby-site` (tag `gatsby-final`).
