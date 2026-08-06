@@ -156,7 +156,7 @@
       "category": "AI Platform",
       "status": "Live",
       "featured": true,
-      "link": "https://agentledger-production-17ff.up.railway.app/",
+      "link": "https://agentledger.koramaple.ca/",
       "github": "https://github.com/a-n-oss/AgentLedger",
       "features": [
         "Hard-stop budgets that return 402 when spend hits the line",
@@ -222,7 +222,7 @@
       "category": "Analytics",
       "status": "Live",
       "featured": true,
-      "link": "https://web-tau-cyan-19.vercel.app/",
+      "link": "https://se.koramaple.ca",
       "github": "https://github.com/a-n-oss/sportsEdge",
       "features": [
         "Matchup cards with win/draw probability bars",
