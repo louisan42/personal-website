@@ -5,7 +5,7 @@
     "currentRole": "Software Engineer I",
     "bio": "Software engineer with 3+ years building the CI/CD and data-infrastructure systems that enterprise engineering and data teams run on daily. Python-primary; writes CI automation, self-service tooling, and observability improvements that keep production pipelines healthy, and stands rotating on-call — converting recurring incidents into root-cause fixes rather than one-off patches.",
     "philosophy": "Take ambiguous requirements end-to-end — architecture, implementation, rollout, and iteration. Hold AI-assisted development to the same quality bar as human-authored code before it reaches production.",
-    "welcomeMessage": "I build CI/CD platforms, automation, and reliable infrastructure with Python, Terraform, and cloud tooling. Explore experience, skills, and how to reach me.",
+    "welcomeMessage": "I build CI/CD platforms, automation, and reliable infrastructure with Python, Terraform, and cloud tooling. Explore projects, skills, and how to reach me.",
     "availability": "Open for opportunities",
     "location": "Brampton, Ontario, Canada",
     "profileImage": "https://res.cloudinary.com/drsxgcyly/image/upload/f_auto,q_auto/v1647447233/fortfolio_website/web_pic121_liqk03.png"

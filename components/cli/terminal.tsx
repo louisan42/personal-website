@@ -66,7 +66,7 @@ export const Terminal = () => {
       <div className="flex items-center justify-between border-b border-terminal-line px-4 py-4 sm:px-8">
         <SignatureMark size="sm" />
         <button
-          className="text-xs uppercase tracking-[0.2em] text-terminal-dim underline decoration-lime decoration-2 underline-offset-4 transition-colors hover:text-ink"
+          className="text-xs uppercase tracking-[0.2em] text-terminal-dim underline decoration-lime decoration-2 underline-offset-4 transition-colors hover:text-terminal-text"
           type="button"
           onClick={(e) => {
             e.stopPropagation();
@@ -82,8 +82,15 @@ export const Terminal = () => {
           <p className="text-terminal-text">Portfolio Terminal · v2.0.0</p>
           <p>Full-Stack / Software Engineer — Louis Amoah-Nuamah</p>
           <p>
-            Type <span className="text-ink">help</span> for commands. Type{" "}
-            <span className="text-ink">gui</span> to leave.
+            Type{" "}
+            <span className="font-semibold text-terminal-text underline decoration-lime decoration-2 underline-offset-2">
+              help
+            </span>{" "}
+            for commands. Type{" "}
+            <span className="font-semibold text-terminal-text underline decoration-lime decoration-2 underline-offset-2">
+              gui
+            </span>{" "}
+            to leave.
           </p>
         </div>
 
@@ -98,7 +105,7 @@ export const Terminal = () => {
                 className={cn(
                   "whitespace-pre-wrap border-l-2 border-terminal-line pl-4 leading-relaxed text-terminal-dim",
                   item.output.type === "error" && "text-terminal-alert",
-                  item.output.type === "success" && "text-ink",
+                  item.output.type === "success" && "text-terminal-text",
                 )}
               >
                 {item.output.content}
@@ -113,7 +120,7 @@ export const Terminal = () => {
             <input
               ref={inputRef}
               autoComplete="off"
-              className="w-full border-none bg-transparent p-0 text-ink outline-none focus:ring-0"
+              className="w-full border-none bg-transparent p-0 text-terminal-text caret-terminal-text outline-none focus:ring-0"
               spellCheck="false"
               type="text"
               value={input}

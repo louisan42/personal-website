@@ -9,7 +9,6 @@ export const commands: Record<string, string> = {
   help: "Show available commands",
   about: "Display professional summary",
   skills: "List technical skills",
-  experience: "Show work history",
   projects: "List featured projects",
   contact: "Show contact information",
   clear: "Clear terminal output",
@@ -62,21 +61,6 @@ ${philosophy}
       .join("\n\n");
 
     return { type: "text", content: skillsOutput };
-  }
-
-  // Experience Command
-  if (cleanCmd === "experience") {
-    const expOutput = portfolioData.experience
-      .map(
-        (job) => `
-[${job.period}] ${job.title} @ ${job.company}
-${job.description}
-Technologies: ${job.technologies.join(", ")}
-    `,
-      )
-      .join("\n");
-
-    return { type: "text", content: expOutput.trim() };
   }
 
   // Projects Command
